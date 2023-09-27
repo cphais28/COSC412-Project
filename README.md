@@ -1,3 +1,3 @@
-# Fill in Project name here 
+# TU self-help website
 Decription: Self-help website for students by students
 Members: Nicole White, Femi Dosumu, Carmen Phaison, Jai Devine, Cameron Roebuck
