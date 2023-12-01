@@ -32,60 +32,62 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <input 
-        placeholder="TU ID..."
-        onChange={(event) => {
-          setNewID(event.target.value);
-        }}
-      />
-      <input 
-        placeholder="Name..." 
-        onChange={(event) => {
-          setNewName(event.target.value);
-        }}
-      />
-      <input 
-        type="number"
-        placeholder="Age..."
-        onChange={(event) => {
-          setNewAge(event.target.value);
-        }}
-      />
-      <input
-        placeholder="Email..."
-        onChange={(event) => {
-          setNewEmail(event.target.value);
-        }}
-      />
-      <input 
-        placeholder="Password..."
-        onChange={(event) => {
-          setNewPass(event.target.value);
-        }}
-      />
-      <button onClick={createUser}> Create User</button>
-      {users.map((user) => {
-        return (
-          <div>
-            {" "}
-            <h1>TU ID: {user.tu_id}</h1>
-            <h1>Name: {user.name}</h1>
-            <h1>Age: {user.age}</h1> 
-            <h1>Email: {user.email}</h1>
-            <h1>Password: {user.password}</h1>
-            <button
-              onClick={() => {
-                deleteUser(user.id);
-              }}
-            >
+    <script type = "text/javascript">
+      <div className="App">
+        <input 
+          placeholder="TU ID..."
+          onChange={(event) => {
+            setNewID(event.target.value);
+          }}
+        />
+        <input 
+          placeholder="Name..." 
+          onChange={(event) => {
+            setNewName(event.target.value);
+          }}
+        />
+        <input 
+          type="number"
+          placeholder="Age..."
+          onChange={(event) => {
+            setNewAge(event.target.value);
+          }}
+        />
+        <input
+          placeholder="Email..."
+          onChange={(event) => {
+            setNewEmail(event.target.value);
+          }}
+        />
+        <input 
+          placeholder="Password..."
+          onChange={(event) => {
+            setNewPass(event.target.value);
+          }}
+        />
+        <button onClick={createUser}> Create User</button>
+        {users.map((user) => {
+          return (
+            <div>
               {" "}
-              Delete User
-            </button> 
-          </div>
-        );
-      })}
-    </div>
+              <h1>TU ID: {user.tu_id}</h1>
+              <h1>Name: {user.name}</h1>
+              <h1>Age: {user.age}</h1> 
+              <h1>Email: {user.email}</h1>
+              <h1>Password: {user.password}</h1>
+              <button
+                onClick={() => {
+                  deleteUser(user.id);
+                }}
+              >
+                {" "}
+                Delete User
+              </button> 
+            </div>
+          );
+        })}
+      </div>
+    </script>
   );
 }
 
