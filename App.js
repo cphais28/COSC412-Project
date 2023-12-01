@@ -10,8 +10,21 @@ function App() {
   const [newEmail, setNewEmail] = useState("")
   const [newPass, setNewPass] = useState("")
 
+  const [newAns1, setNewAns1] = useState(0)
+  const [newAns2, setNewAns2] = useState(0)
+  const [newAns3, setNewAns3] = useState(0)
+  const [newAns4, setNewAns4] = useState(0)
+  const [newAns5, setNewAns5] = useState(0)
+
   const [users, setUsers] = useState([]);
   const usersCollectionRef = collection(db, "users");
+
+  const [quiz, setQuiz] = useState([]);
+  const quizCollectionRef = collection(db, "quiz");
+
+  const quizAnswer = async () => {
+    await addDoc(quizCollectionRef, {question_1: newAns1, question_2: newAns2, question_3: newAns3, question_4: newAns4, question_5: newAns5});
+  };
 
   const createUser = async () => {
     await addDoc(usersCollectionRef, {tu_id: newID, name: newName, age: newAge, email: newEmail, password: newPass});
@@ -29,6 +42,15 @@ function App() {
     }
 
     getUsers()
+  }, []);
+
+  useEffect(() => {
+    const getQuiz = async () => {
+      const data = await getDocs(quizCollectionRef);
+      setQuiz(data.docs.map((doc) => ({...doc.data(), id: doc.id})))
+    }
+
+    getQuiz()
   }, []);
 
   return (
