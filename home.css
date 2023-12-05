@@ -1,0 +1,14 @@
+.title-text {
+    font-size: 2em; 
+    text-align: center;
+    font-family: 'Copperplate', cursive;
+  }
+
+.navbar-nav .nav-link.active{
+    color: blueviolet;
+}
+
+body{
+    background-color:rgb(247, 246, 239) ;
+    
+}
